@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test SSE Page</title>
+</head>
+<script type="text/javascript">
+var source = new EventSource('http://127.0.0.1:7777/sse/test-sse');
+    source.onmessage = function(event){
+    console.info(event.data);
+    document.getElementById('result').innerText=event.data;
+}
+</script>
+<body class="blank">
+<div id="result"></div>
+</body>
+</html>
