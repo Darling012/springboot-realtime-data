@@ -49,7 +49,7 @@ public class SseEmitterUtils {
             /**
              * 设置超时时间，0表示不过期。默认30秒
              */
-            SseEmitter sseEmitter = new SseEmitter(0L);
+            SseEmitter sseEmitter = new SseEmitter(10000L);
             /**
              * 注册回调
              */
@@ -57,6 +57,7 @@ public class SseEmitterUtils {
             sseEmitter.onError(errorCallBack(userId));
             sseEmitter.onTimeout(timeoutCallBack(userId));
             sseEmitterMap.put(userId, sseEmitter);
+             log.info("新建用户：{}", userId);
             /**
              * 数量+1
              */

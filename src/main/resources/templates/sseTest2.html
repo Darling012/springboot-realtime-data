@@ -4,7 +4,7 @@
 <title>Test SSE Page</title>
 </head>
 <script type="text/javascript">
-var source = new EventSource('http://127.0.0.1:7777/sse/test-sse');
+var source = new EventSource('http://127.0.0.1:7777/sse/test-sse2');
     source.onmessage = function(event){
     console.info(event.data);
     document.getElementById('result').innerText= event.data;

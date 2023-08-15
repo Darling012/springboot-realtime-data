@@ -14,12 +14,13 @@ import org.springframework.web.context.request.async.AsyncRequestTimeoutExceptio
  */
 @ControllerAdvice
 public class AsyncRequestTimeoutHandler {
-
+    int i =0 ;
     @ResponseStatus(HttpStatus.NOT_MODIFIED)
     @ResponseBody
     @ExceptionHandler(AsyncRequestTimeoutException.class)
     public String asyncRequestTimeoutHandler(AsyncRequestTimeoutException e) {
         System.out.println("异步请求超时");
+        System.out.println(i++);
         return "异步请求超时";
     }
 }
